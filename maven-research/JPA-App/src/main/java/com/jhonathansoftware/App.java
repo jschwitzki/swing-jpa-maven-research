@@ -12,9 +12,22 @@ public class App {
 		EntityManager entityManager = factory.createEntityManager();
 		entityManager.getTransaction().begin();
 		
-
-		Student s = new Student("Joe", 12, "500 ruas");
-		entityManager.persist(s);
+		// CRUD
+		// Create
+		// Person p = new Person("Jhonathan", "jhonathan@teste.com");
+		
+		// Read
+		// Person p = entityManager.find(Person.class, 1);
+		// System.out.println(p);
+		
+		// Delete
+		Person p = entityManager.find(Person.class, 1);
+		entityManager.remove(p);
+		
+		
+		
+		
+		// entityManager.persist(p);
 		entityManager.getTransaction().commit();
 		
 		entityManager.close();
